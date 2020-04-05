@@ -1,0 +1,32 @@
+{% extends 'project/base.html' %}
+
+
+{% block content %}
+    
+
+    
+
+<h1>This is my portfolio</h1>
+
+{% load static %}
+
+<img src="{% static 'project/care.png' %}" alt="" class="img-fluid max-width:100 height:auto">
+
+<div class="row">
+    {% for project in projects %}
+    <div class="col">
+        <h2>{{project.title}}</h2>
+        <img src="{{project.image.url}}" alt="" class="img-fluid max-width:10px height:auto">
+        
+       <p>{{project.description}}</p>
+        
+    </div>
+   
+{% endfor %}
+  </div>
+
+
+
+
+
+{% endblock content %}
